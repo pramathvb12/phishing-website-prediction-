@@ -35,11 +35,13 @@ def index_func(request):
             filename1 = 'polls/Phishing.pickle'
             loaded_model = pickle.load(open(filename1, 'rb'))
             res = loaded_model.predict(df)
-            print(res)
+            # print(res)
             if res[0] == 1:
                 res = True
             else:
                 res = False
+
+            print(res)
 
         else:
             return redirect('homepage')
